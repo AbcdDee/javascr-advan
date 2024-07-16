@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+ 
+   
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+
+
+
+
+   <div class="contact">
+       <div class="container">
+       <div class="row">
+       <div class="col-md-12 col-xs-12">
+       <div class="jumbotron">
+           <div class="agileits-title">
+               <h2>Register Form</h2>
+           </div>
+           
+           
+           
+           
+<div class="agile-contact-form">
+                   
+       <h4 id="msg1" align="center" style="color:#FF0000; text-transform:capitalize"></h4>
+       <br>
+       <br>	
+               
+               
+       <form method="post" class="form-horizontal" onsubmit="return reg_form(this)"> 
+
+
+       
+          <div class="form-group">
+               <label class="control-label col-sm-2">First Name <span style="color:red">*</span></label>
+                   <div class="col-sm-10">
+                 <input type="text" class="form-control" placeholder="Enter User Name" name="Username" id="Fname">
+                   </div>
+           </div>
+
+          <div class="form-group">
+               <label class="control-label col-sm-2">Last Name <span style="color:red">*</span></label>
+                   <div class="col-sm-10">
+                 <input type="text" class="form-control" placeholder="Enter Last Name" name="Last Name" id="Lname">
+                   </div>
+           </div>
+
+             <div class="form-group">
+               <label class="control-label col-sm-2">Password <span style="color:red">*</span></label>
+               <div class="col-sm-10">
+             <input type="password" class="form-control" placeholder="Enter Password" name="pass"  id="pass">
+            </div>
+            </div>
+           
+           <div class="form-group">
+               <label class="control-label col-sm-2">Email <span style="color:red">*</span></label>
+               <div class="col-sm-10">
+                 <input type="text" id="email" class="form-control"  placeholder="Enter Email" name="em" >
+               </div>
+             </div>
+
+             <div class="form-group">
+               <label class="control-label col-sm-2">Gender <span style="color:red">*</span></label>
+                   <div class="col-sm-10">
+                 Male <input type="radio"  name="gender" value="m" style="width: auto; height: auto;">
+                 Female <input type="radio" name="gender" value="f" style="width: auto; height: auto;" >
+                     </div> 
+             </div>
+
+
+              
+
+             <div class="form-group">
+               <label class="control-label col-sm-2">Country <span style="color:red">*</span></label>
+               <div class="col-sm-10">
+                 <select name="country"  class="form-control" id="country">
+                     <option value="">-Select Country-</option>
+                     <option value="India">India</option>
+                     <option value="Usa">Usa</option>
+                     <option value="India">Japan</option>
+                     <option value="Usa">Rasia</option>
+                     </select>
+               </div>
+             </div>
+
+            
+
+     
+             <div class="form-group">
+               <label class="control-label col-sm-2">DOB <span style="color:red">*</span></label>
+               <div class="col-sm-4">
+                 <input type="date" class="form-control"  placeholder="DOB" name="dob" id="dob">
+               </div>
+             </div>
+
+
+             <div class="form-group">
+              
+               <div class="col-sm-8 col-sm-offset-2">
+                 <input type="submit" class="btn btn-warning btn-lg" value="submit" id="submit">
+               </div>
+             </div>
+             
+             <h4 align="center"><span id="msg" style="color:#FF0000; text-transform:capitalize"></span></h4>
+</form>
+
+               </div>
+               </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- //contact -->
+
+<script>
+   
+
+function reg_form(str)
+{
+   if(str.Fname.value=="")
+   {
+   document.getElementById("msg1").innerHTML="! Please enter Some Value in First Name";
+   str.Fname.focus();
+   return false;
+   }
+   
+   if(!str.Fname.value.match(/^[a-zA-Z]{1,}$/))
+   {
+   document.getElementById("msg1").innerHTML="! Please enter Only Character Value";
+   str.Fname.focus();
+   return false;
+   }
+   if(str.Lname.value=="")
+   {
+   document.getElementById("msg1").innerHTML="! Please enter Some Value in Last Name";
+   str.Lname.focus();
+   return false;
+   }
+   
+   if(!str.Lname.value.match(/^[a-zA-Z]{1,}$/))
+   {
+   document.getElementById("msg1").innerHTML="! Please enter Only Character Value";
+   str.uname.focus();
+   return false;
+   }
+   
+   if(str.pass.value=="")
+   {
+   document.getElementById("msg1").innerHTML="! Please enter Some Value in Password";
+   str.pass.focus();
+   return false;
+   }
+   
+   
+   if(str.pass.value.length<8)
+   {
+   document.getElementById("msg1").innerHTML="! Please enter minimum 8 digit length";
+   str.pass.focus();
+   return false;
+   }
+   
+   if(str.email.value=="")
+   {
+   document.getElementById("msg1").innerHTML="! Please enter Some Value in Email";
+   str.email.focus();
+   return false;
+   }
+   
+   if(!str.email.value.match(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,3})+$/))
+   {
+   document.getElementById("msg1").innerHTML="! Please enter Correct Email Address";
+   str.email.focus();
+   return false;
+   }
+   
+   var gen_arr = document.getElementsByName("gender");
+   if (gen_arr[0].checked == true) 
+   {
+                  
+   } 
+   else if (gen_arr[1].checked == true) 
+   {
+                 
+   } 
+   else 
+   {
+     document.getElementById("msg1").innerHTML="! Please Select Gender";	
+      return false;
+   }
+   
+      
+   
+    
+   
+   if(str.dob.value=="")
+   {
+   document.getElementById("msg1").innerHTML="! Please Select Date in Date of Birth";
+   str.dob.focus();
+   return false;
+   }
+}	 
+</script>
+
+</body>
+</html>
